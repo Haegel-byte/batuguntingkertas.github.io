@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Batu Gunting Kertas</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="mode-select">
+            <button onclick="setMode('vscom')">VS Computer</button>
+            <button onclick="setMode('2p')">2 Players</button>
+        </div>
+
+        <div class="game-container">
+            <h2>Batu Gunting Kertas</h2>
+            <div class="timer">
+                Time: <span id="timeLeft">30</span>s
+            </div>
+            <div id="currentMode">Mode: VS Computer</div>
+
+            <div class="score">
+                <span class="player-label">Player 1</span>:
+                <span id="score1" class="digital-score">0</span>
+                <br />
+                <span id="opponent" class="player-label">Computer</span>:
+                <span id="score2" class="digital-score">0</span>
+            </div>
+
+            <div id="player1Area" class="player-area">
+                <h3>Player 1</h3>
+                <div class="choices">
+                    <button onclick="play('batu', 1)">Batu</button>
+                    <button onclick="play('gunting', 1)">Gunting</button>
+                    <button onclick="play('kertas', 1)">Kertas</button>
+                </div>
+            </div>
+
+            <div id="player2Area" class="player-area" style="display: none">
+                <h3>Player 2</h3>
+                <div class="choices">
+                    <button onclick="play('batu', 2)">Batu</button>
+                    <button onclick="play('gunting', 2)">Gunting</button>
+                    <button onclick="play('kertas', 2)">Kertas</button>
+                </div>
+            </div>
+
+            <div class="result" id="result"></div>
+
+            <button onclick="resetGame()">Reset Game</button>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
